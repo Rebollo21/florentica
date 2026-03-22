@@ -13,6 +13,27 @@ use App\Models\Comment;
 use App\Models\Producto;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
+
+/*
+|--------------------------------------------------------------------------
+| 🚀 RUTA DE EMERGENCIA (Instalación)
+|--------------------------------------------------------------------------
+*/
+Route::get('/instalar-florentica', function () {
+    try {
+        // 1. Limpia cualquier residuo y crea las tablas desde cero en Postgres
+        Artisan::call('migrate:fresh', ['--force' => true]);
+        
+        // 2. Ejecuta los seeders para crear tu usuario administrador
+        Artisan::call('db:seed', ['--force' => true]);
+        
+        return "🏛️ ¡SISTEMA FLORENTICA INICIALIZADO! Ya puedes ir al /login.";
+    } catch (\Exception $e) {
+        return "❌ Error detallado: " . $e->getMessage();
+    }
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | 🔓 RUTAS PÚBLICAS
@@ -104,3 +125,4 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     $request->fulfill();
     return redirect()->route('shop.index'); 
 })->middleware(['auth', 'signed'])->name('verification.verify');
+
