@@ -1,17 +1,18 @@
 FROM php:8.2-fpm
 
-# Instalar dependencias del sistema
+# Instalar dependencias del sistema y drivers de PostgreSQL
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libpq-dev \
     zip \
     unzip
 
-# Instalar extensiones de PHP
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+# Instalar extensiones de PHP (Ahora con pdo_pgsql)
+RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd
 
 # Instalar Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
