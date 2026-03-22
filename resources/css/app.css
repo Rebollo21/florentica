@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  --color-flower-pink: #F2A2C0;
+  --color-flower-purple: #C3B1E1;
+  --color-flower-soft: #F9F5FF;
+  --color-flower-dark: #4A4A4A;
+  --color-flower-green: #A8D5BA;
+  --color-flower-red: #F0716C;
+  --color-flower-pink-light: #fff9f9;
+  --color-flower-gold: #D4AF37;
+    
+}
+@utility btn-pink {
+  background-color: var(--color-flower-pink);
+  color: white;
+}
+/* --- ESTILOS DE RESCATE --- */
+.bg-flower-pink { background-color: #F2A2C0 !important; color: white !important; }
+.bg-flower-purple { background-color: #C3B1E1 !important; color: white !important; }
+.border-flower-pink { border: 2px solid #F2A2C0 !important; color: #F2A2C0 !important; }
+.border-flower-gold { border: 2px solid #D4AF37 !important; color: #D4AF37 !important; }
+.text-flower-pink { color: #F2A2C0 !important; }
+.text-flower-green { color: #A8D5BA !important; }
+
+
+
+
+/* --- BOTONES FLORENTICA (RESPONSIVOS) --- */
+.btn-florentica {
+    border-radius: 50px !important; /* El !important asegura la victoria */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important; 
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* --- BOTONES FLORENTICA (RESPONSIVOS) --- */
+.btn-florentica2 {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 50% !important; 
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* --- BOTÓN FLORENTICA (ESTADO NORMAL) --- */
+.btn-florentica2 {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 50% !important; 
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* --- EFECTO HOVER (SOLO CAMBIOS) --- */
+.btn-florentica2:hover {
+    transform: translateY(-3px); /* Pequeño salto hacia arriba (Efecto Premium) */
+    box-shadow: 5px rgba(255, 20, 147, 0.3); /* Sombra elegante */
+}
+
+
+/* FUERZA BRUTA: Evita que Bootstrap esconda el contenido en PC */
+@media (min-width: 992px) {
+    .collapse.navbar-collapse {
+        display: flex !important;
+        visibility: visible !important;
+    }
+}
+
+/* Asegura que en móvil, al abrirse (.show), se vea el contenido */
+.collapse.navbar-collapse.show {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Limpieza de botones para que no hereden bloqueos */
+.btn-florentica {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Evitar conflictos con Bootstrap */
+.collapse.show {
+    visibility: visible !important;
+    display: block !important;
+}
+
+.btn-florentica:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+.product-card img {
+    height: 400px !important; /* Altura uniforme para todas */
+    width: 400px;
+    object-fit: cover; /* Para que no se deformen */
+}
+
+
+
+
+
+
+/* --- BASE DEL BOTÓN (IGUAL PARA TODOS) --- */
+.btn-florentica3 {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px !important; /* Espaciado fijo */
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #ff69b4 !important; /* Borde rosa siempre activo */
+    min-width: 140px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- ESTADO: SELECCIONADO (Activo) --- */
+.btn-active {
+    background-color: #ff69b4 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* --- ESTADO: NO SELECCIONADO (Reposos) --- */
+.btn-inactive {
+    background-color: transparent !important;
+    color: #ff69b4 !important;
+}
+
+/* --- EFECTO AL PASAR EL MOUSE --- */
+.btn-florentica2:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+
+
+/* Seleccionamos la tarjeta que envuelve el link */
+
+/* ESTADO BASE (Esto controla la velocidad de ida y vuelta) */
+.card.rounded-4 {
+    /* Aumentamos a 0.6s para que sea más notable y elegante */
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1.0) !important;
+    cursor: pointer;
+    will-change: transform, box-shadow; /* Optimización para tus 180Hz */
+}
+
+
+/* Efecto cuando el mouse entra a la columna o a la tarjeta */
+.card.rounded-4:hover {
+    transform: translateY(-10px); /* La tarjeta "flota" hacia arriba */
+    background-color: #fff9fb !important; /* Un toque de rosa casi imperceptible */
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2) !important; /* Sombra rosa suave */
+}
+
+/* Efecto en el Emoji para que resalte */
+.card.rounded-4:hover .fs-1 {
+    display: inline-block;
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+/* Animación de rebote opcional para el icono */
+@keyframes bounce {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+
+/* Texto Dorado solo para la Premium */
+.card-gold:hover h5 {
+    color: #D4AF37 !important; /* Oro Metálico */
+    text-shadow: 0px 0px 8px rgba(212, 175, 55, 0.3);
+    transition: color 0.6s ease;
+}
+
+
+.card.rounded-4:not(.card-gold):hover h5 {
+    color: #ff69b4 !important; /* Rosa Florentica */
+    text-shadow: none;
+    transition: color 0.6s ease;
+}
+
+
+
+.text-flower-gold {
+    color: #D4AF37 !important; /* Oro metálico de alta gama */
+}
+
+
+
+
+.card-premium-product {
+    background-color: #1a1a1a !important; /* Un gris casi negro */
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1.0);
+}
+
+
+.card-premium-product:hover {
+    /* En lugar de volverse blanca, la tarjeta sube */
+    transform: translateY(-15px) scale(1.02); 
+    
+    /* El fondo se mantiene oscuro, NO blanco */
+    background-color: #222222 !important; 
+    
+    /* Añadimos un resplandor dorado sutil */
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.2) !important;
+    
+    /* El borde brilla más */
+    border-color: rgba(212, 175, 55, 0.8) !important;
+}
+
+/* Botón Premium */
+.btn-premium-action {
+    text-decoration: none !important;
+    background: transparent;
+    color: #D4AF37;
+    border: 2px solid #D4AF37;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Gradiente para el texto dorado */
+.text-flower-gold {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+
+
+
+/* 1. MÓVIL (Comportamiento base) */
+.sticky-categories {
+    position: relative !important; 
+    top: auto !important;
+    z-index: 100 !important;
+    background-color: transparent !important; /* Para que luzca el bg-flower-pink-light del HTML */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+}
+
+
+
+
+/* Esto aplica a toda la página para cualquier ancla */
+html {
+    scroll-behavior: smooth;
+    /* Ajusta este valor (80px o 100px) según la altura de tu Navbar */
+    scroll-padding-top: 20px; 
+}
+
+/* 2. PC / TABLETS (Desde 768px en adelante) */
+@media (min-width: 768px) {
+    
+    /* Esto aplica a toda la página para cualquier ancla */
+html {
+    scroll-behavior: smooth;
+    /* Ajusta este valor (80px o 100px) según la altura de tu Navbar */
+    scroll-padding-top: 10px; 
+}
+
+}
